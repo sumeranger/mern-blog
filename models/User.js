@@ -18,8 +18,12 @@ const UserSchema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
-      default: "",
+      default: "https://res.cloudinary.com/sumeranger/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1624398980/pexels-karolina-grabowska-4207567_sctx4f.jpg",
     },
+    profilePicCloudId:{
+      type: String,
+      default: ""
+    }
   },
   { timestamps: true }
 );

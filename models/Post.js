@@ -14,6 +14,7 @@ const PostSchema = new mongoose.Schema(
     photo: {
       type: String,
       required: false,
+      default:"https://res.cloudinary.com/sumeranger/image/upload/v1624399478/pexels-sharon-mccutcheon-1191710_iwpakf.jpg",
     },
     username: {
       type: String,
@@ -23,6 +24,10 @@ const PostSchema = new mongoose.Schema(
       type: Array,
       required: false,
     },
+    photoCloudId:{
+      type: String,
+      required: false,
+    }
   },
   { timestamps: true }
 );
