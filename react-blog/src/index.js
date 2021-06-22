@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { config } from "./components/Config";
 import { ContextProvider } from "./context/Context";
 
 ReactDOM.render(

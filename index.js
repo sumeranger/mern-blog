@@ -45,8 +45,13 @@ app.use("/api/categories", categoriesRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("./react-blog/build"));
+  app.listen(port, () => {
+    console.log("Backend is running.");
+  });
+}else{
+  app.listen(5000, () => {
+    console.log("Backend is running.");
+  });
 }
 
-app.listen(port, () => {
-  console.log("Backend is running.");
-});
+
