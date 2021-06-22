@@ -15,7 +15,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "build": "cd react-blog && yarn run build",
     "install-client": "cd react-blog && yarn install",
     "heroku-postbuild": "yarn run install-client && yarn run build"
