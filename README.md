@@ -14,3 +14,5 @@ React + Express.js + Node.js + MongoDB Atlas
 - [ ] integrate Cloudinary : Image upload func
 - [ ] ABOUT page
 - [ ] CONTACT page
+- [ ] search & filter
+- [ ] social media link
