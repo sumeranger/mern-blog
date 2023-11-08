@@ -16,9 +16,9 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
-    "build": "cd react-blog && yarn run build",
-    "install-client": "cd react-blog && yarn install",
-    "heroku-postbuild": "yarn run install-client && yarn run build"
+    "build": "cd react-blog && npm run build",
+    "install-client": "cd react-blog && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build"
   },
   "license": "ISC",
   "engines": {
