@@ -28,6 +28,7 @@ export default function Settings() {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
+      updatedUser.profilePic = filename;
       try {
         const result = await axios.post("/api/upload", data);
         if (result?.data) {
