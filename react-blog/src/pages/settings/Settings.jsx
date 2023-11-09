@@ -28,10 +28,12 @@ export default function Settings() {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      updatedUser.profilePic = filename;
       try {
-        await axios.post("/api/upload", data);
-      } catch (err) { }
+        const result = await axios.post("/api/upload", data);
+        if (result?.data) {
+          updatedUser.profilePic = result?.data;
+        }
+      } catch (err) {}
     }
     try {
       const res = await axios.put("/api/users/" + user._id, updatedUser);
@@ -51,10 +53,7 @@ export default function Settings() {
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
           <div className="settingsPP">
-            <img
-              src={file ? URL.createObjectURL(file) : user.profilePic}
-              alt=""
-            />
+            <img src={file ? URL.createObjectURL(file) : user.profilePic} alt="" />
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>
             </label>
@@ -78,17 +77,12 @@ export default function Settings() {
             onChange={(e) => setEmail(e.target.value)}
           />
           <label>Password</label>
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <input type="password" onChange={(e) => setPassword(e.target.value)} />
           <button className="settingsSubmit" type="submit">
             Update
           </button>
           {success && (
-            <span
-              style={{ color: "green", textAlign: "center", marginTop: "20px" }}
-            >
+            <span style={{ color: "green", textAlign: "center", marginTop: "20px" }}>
               Profile has been updated...
             </span>
           )}
